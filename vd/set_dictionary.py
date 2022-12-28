@@ -15,7 +15,6 @@ def set():
 
 
 
-
 '''Kiểu dữ liệu Dictionary trong Python là một tập hợp các cặp 'key' : 'value' không có thứ tự,
  có thể thay đổi và lập chỉ mục (truy cập phần tử theo chỉ mục)'''     #từ phiên bản py 3.7 thì có thứ tự
 def dic():
@@ -42,4 +41,4 @@ def tuvung():
     'song':'bài hát'}
     a=input('nhập từ muốn dịch: ')
     print(dic.get(a,'không tìm thấy'))
-tuvung()
+

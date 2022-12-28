@@ -794,7 +794,7 @@ def chenso():
     print(lst_chen)
 #bai3
 def uocsosx():
-  for i in range (0,len(N)-1,2): #star end step
+  for i in range (0,len(N)-1,2): #star end step  or Tạo một list từ hàm range(start, stop[, step])
     a = N[i]
     b= N[i+1]
     def USCLN(a,b):
