@@ -36,16 +36,18 @@ def tong(a=7):
 		return a+ b +c
 
 #bai5
-def songuyento(n):
-    #Có sử dụng cấu trúc lambda
-    if n <= 1:
-        print(n,"Không là số nguyên tố")
-        return
-    elif n == 2:
-        print(n,"là số nguyên tố")
-        return
-    lst = list(range(2,n))
-    (lambda x: print(n,"là số nguyên tố") if 0 not in [n % i for i in lst] else print(n,"Không là số nguyên tố"))(n)
+def ngto():
+n = int(input("nhâp số:"))
+
+if n<2:
+    print("không phải là số nguyên tố")
+else:
+    for i in range(2,n//2):
+        if n%i==0:
+            print(n," không phải là số nguyên tố")
+            break
+    else:
+        print("là số nguyên tố",n)
 
 #bai6
 def giaithua():
