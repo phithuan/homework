@@ -1,25 +1,19 @@
-import cv2
+import ffmpeg
 
-# Đọc video
-video = cv2.VideoCapture('video.mp4')
+# Define input video file path and output image directory path
+input_path = 'D:\vscode\bai_tap_py\ffmpeg/video.mp4'
+output_dir = 'D:\hinh'
 
-# Tính số khung hình trên mỗi giây
-fps = int(video.get(cv2.CAP_PROP_FPS))
+# Define the times in seconds where you want to extract the images from
+times_seconds = [1, 10, 15, 17]
 
-# Lấy 10 khung hình trong 1 giây
-step = fps // 10
-
-# Đọc khung hình đầu tiên
-success, image = video.read()
-count = 0
-
-# Đọc ảnh thứ 10 từ đầu tiên
-while success:
-    if count % step == 0:
-        cv2.imwrite(f'frame_{count}.jpg', image)
-    success, image = video.read()
-    count += 1
-
-# Lấy ảnh đầu tiên và cuối cùng
-first_frame = cv2.imread('frame_0.jpg')
-last_frame = cv2.imread(f'frame_{count - 1}.jpg')
+# Extract the images from the video using ffmpeg-python
+for i, time_sec in enumerate(times_seconds):
+    (
+        ffmpeg
+        .input(input_path, ss=time_sec)
+        .filter('scale', 640, -1)
+        .output(f'{output_dir}/image_{i}.jpg', vframes=1)
+        .overwrite_output()
+        .run()
+    )

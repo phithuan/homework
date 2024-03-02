@@ -18,7 +18,7 @@ def vd1():
 
     hcn1.show()
     print('diện tích và chu vi hình chữ nhật lần lượt là: ',hcn1.dientich(), hcn1.chuvi())
-
+vd1()
 
 
 def vd2():
@@ -40,5 +40,5 @@ def vd2():
 
     tg1=tugiac('vuông',6,6,6,6)
     print('chu vi hình vuông là: ',tg1.chuvi())
-vd2()
+
 
